@@ -29,7 +29,7 @@ def compute_driver_actors(net: MultilayerNetwork) -> list[MLNetworkActor]:
 
 def minimum_dominating_set_with_initial(
     net: MultilayerNetwork, layer: str, initial_set: set[Any]
-) -> set[int]:
+) -> set[Any]:
     """
     Return a dominating set that includes the initial set.
 

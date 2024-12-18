@@ -19,7 +19,7 @@ from uunet import multinet
 
 from network_diffusion.mln.actor import MLNetworkActor
 from network_diffusion.utils import BOLD_UNDERLINE, THIN_UNDERLINE
-
+from typing import Any, List, Set
 
 class MultilayerNetwork:
     """
@@ -329,3 +329,11 @@ class MultilayerNetwork:
         :return: list of layers' names
         """
         return [*self.layers.keys()]
+
+    def get_actor_ids(self) -> List[Any]:
+        """
+        Retrieve all unique actor IDs in the multilayer network.
+
+        :return: A list of unique actor IDs.
+        """
+        return list({actor.actor_id for actor in self.get_actors()})
